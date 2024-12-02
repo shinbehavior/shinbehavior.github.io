@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 9% 98%;
+    --foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+  }
+
+  .dark {
+    --background: 220 13% 13%; /* Softer dark background - similar to #1d1f21 */
+    --foreground: 220 13% 91%; /* Soft white text for better readability */
+    --card: 220 13% 15%; /* Slightly lighter than background for cards */
+    --card-foreground: 220 13% 91%;
+    --muted: 220 13% 18%; /* Subtle contrast for muted elements */
+    --muted-foreground: 220 13% 70%; /* Softer text for muted content */
+    --accent: 220 13% 20%; /* Gentle accent for interactive elements */
+    --accent-foreground: 220 13% 91%;
+  }
+}
+
+@layer base {
+  body {
+    font-family: 'Georgia', serif;
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+  
+  .font-serif {
+    font-family: 'Georgia', serif;
+  }
+  
+  .font-mono {
+    font-family: 'Courier New', monospace;
+  }
+}
+
+.prose {
+  max-width: 65ch;
+  line-height: 1.75;
+}
+
+@keyframes spring {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.ease-spring {
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
